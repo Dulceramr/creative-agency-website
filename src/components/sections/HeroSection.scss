@@ -205,12 +205,12 @@
       transform: translateX(-50%);
       width: 70%;
       height: 20%;
-      background: darken(variables.$color-primary, 10%);
+    background: rgba(249, 79, 79, 0.9);
       border-radius: 4px;
     }
   }
   
-  // Cuando tengas la imagen real:
+  // para la imagen real:
   &__image {
     position: absolute;
     top: 0;
