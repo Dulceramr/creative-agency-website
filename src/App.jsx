@@ -1,10 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
+import './styles/main.scss';
+
 function App() {
   return (
     <div className="app">
-      <h1>Creative Agency Website</h1>
-      <p>Proyecto para Papalote Museo del Niño</p>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,50 @@
+@use '../../styles/variables';
+
+.carousel-card {
+  background: variables.$color-white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  
+  @media (min-width: variables.$breakpoint-tablet) {
+    padding: 3rem;
+  }
+  
+  &__header {
+    margin-bottom: 1.5rem;
+  }
+  
+  &__category {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: variables.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: variables.$color-primary;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__title {
+    font-size: 2rem;
+    font-weight: variables.$font-weight-extrabold;
+    line-height: 1.2;
+    color: variables.$color-text;
+    margin: 0;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  &__description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(variables.$color-text, 0.8);
+    margin: 0;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      font-size: 1.25rem;
+    }
+  }
+}

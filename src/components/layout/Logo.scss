@@ -1,0 +1,52 @@
+@use '../../styles/variables';
+
+.logo {
+  text-decoration: none;
+  color: variables.$color-text;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &:focus {
+    outline: 2px solid variables.$color-primary;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  
+  &__svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__image {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__name {
+    font-size: 1.25rem;
+    font-weight: variables.$font-weight-extrabold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    
+    // Ocultar en mobile muy pequeño
+    @media (max-width: 350px) {
+      display: none;
+    }
+  }
+}
