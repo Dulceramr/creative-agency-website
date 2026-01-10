@@ -9,21 +9,21 @@ const CarouselSection = () => {
   const slides = [
     {
       id: 1,
-      image: 'book', // Placeholder de libro
+      image: '/images/carousel/brand-book.jpeg',
       title: 'Brand naming & guidelines',
       category: 'Brand identity',
       description: 'Learn how we created a memorable brand name and comprehensive guidelines for consistency.'
     },
     {
       id: 2,
-      image: 'merch',
+      image: '/images/carousel/merchandise.jpeg',
       title: 'Brand identity & merchandise',
       category: 'Brand identity', 
       description: 'Discover our approach to creating cohesive brand identity across physical merchandise.'
     },
     {
       id: 3,
-      image: 'web',
+      image: '/images/carousel/web-design.jpeg', 
       title: 'Brand identity & web design',
       category: 'Web design',
       description: 'See how we integrate brand identity into responsive and engaging web experiences.'
@@ -44,25 +44,15 @@ const CarouselSection = () => {
     <section className="carousel-section" id="projects">
       <div className="carousel-section__container container">
         
-        {/* Imagen del lado izquierdo (libro) */}
+        {/* Imagen del lado izquierdo - SOLO IMAGEN */}
         <div className="carousel-section__image-container">
           <div className="carousel-section__image-wrapper">
-            {/* Placeholder del libro - después pondrás imagen real */}
-            <div className="carousel-section__book">
-              <div className="carousel-section__book-cover">
-                <div className="carousel-section__book-title">Creative</div>
-                <div className="carousel-section__book-subtitle">Brand Guidelines</div>
-              </div>
-              <div className="carousel-section__book-pages"></div>
-            </div>
-            
-            {/* Para imagen real:
             <img 
-              src="/images/brand-book.jpg" 
-              alt="Brand guidelines book"
+              src={currentSlideData.image} 
+              alt={currentSlideData.title}
               className="carousel-section__image"
+              loading="lazy"
             />
-            */}
           </div>
         </div>
         
@@ -84,9 +74,7 @@ const CarouselSection = () => {
             onPrev={prevSlide}
             onNext={nextSlide}
           />
-          
         </div>
-        
       </div>
     </section>
   );

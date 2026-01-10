@@ -1,4 +1,3 @@
-import React from 'react';
 import './CarouselCard.scss';
 
 const CarouselCard = ({ title, category, description }) => {

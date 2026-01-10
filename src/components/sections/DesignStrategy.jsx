@@ -10,25 +10,12 @@ const DesignStrategy = () => {
         {/* Imagen de laptop (55% width en desktop) */}
         <div className="design-strategy__image-container">
           <div className="design-strategy__image-wrapper">
-            {/* Placeholder de laptop */}
-            <div className="design-strategy__laptop">
-              <div className="design-strategy__laptop-screen">
-                <div className="design-strategy__screen-content">
-                  <div className="design-strategy__design-element design-strategy__design-element--1"></div>
-                  <div className="design-strategy__design-element design-strategy__design-element--2"></div>
-                  <div className="design-strategy__design-element design-strategy__design-element--3"></div>
-                </div>
-              </div>
-              <div className="design-strategy__laptop-base"></div>
-            </div>
-            
-            {/* Para imagen real:
             <img 
-              src="/images/laptop-design.jpg" 
+              src="/images/design-strategy/laptop-design.jpeg" 
               alt="Laptop showing design work and strategy"
               className="design-strategy__image"
+              loading="lazy"
             />
-            */}
           </div>
         </div>
         
