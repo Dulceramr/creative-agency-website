@@ -1,24 +1,15 @@
-import Header from './components/layout/Header';
-import HeroSection from './components/sections/HeroSection';
-import DesignStrategy from './components/sections/DesignStrategy';
-import ApproachSection from './components/sections/ApproachSection';
-import CarouselSection from './components/sections/CarouselSection';
-import CTASection from './components/sections/CTASection'; // Nuevo
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
 import './styles/main.scss';
 
 function App() {
   return (
     <div className="app">
-      <Header />
-      
-      <main>
-        <HeroSection />
-        <DesignStrategy />
-        <ApproachSection />
-        <CarouselSection />
-        <CTASection /> 
-      </main>
-
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
     </div>
   );
 }

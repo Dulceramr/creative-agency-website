@@ -1,0 +1,387 @@
+@use '../../styles/variables';
+
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
+  
+  &__content {
+    position: relative;
+    background: variables.$color-white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+  }
+  
+  &__header {
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  &__title {
+    font-size: 1.75rem;
+    font-weight: variables.$font-weight-extrabold;
+    color: variables.$color-text;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  &__subtitle {
+    font-size: 1rem;
+    color: rgba(variables.$color-text, 0.7);
+    margin: 0;
+  }
+  
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: rgba(variables.$color-text, 0.6);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      color: variables.$color-text;
+    }
+  }
+  
+  &__form {
+    padding: 1.5rem 2rem 2rem;
+  }
+  
+  &__success, &__error {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: variables.$font-weight-bold;
+  }
+  
+  &__success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  
+  &__error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &__field {
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$color-text;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    &::after {
+      content: ' *';
+      color: variables.$color-primary;
+      opacity: 0.7;
+    }
+  }
+  
+  &__input,
+  &__select,
+  &__textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid rgba(variables.$color-text, 0.1);
+    border-radius: 8px;
+    font-family: variables.$font-family-primary;
+    font-size: 1rem;
+    color: variables.$color-text;
+    background: variables.$color-white;
+    transition: all variables.$transition-base;
+    
+    &:focus {
+      outline: none;
+      border-color: variables.$color-primary;
+      box-shadow: 0 0 0 3px rgba(variables.$color-primary, 0.1);
+    }
+    
+    &:hover:not(:focus) {
+      border-color: rgba(variables.$color-text, 0.3);
+    }
+  }
+  
+  &__select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    padding-right: 3rem;
+  }
+  
+  &__textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  &__cancel {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: 2px solid rgba(variables.$color-text, 0.2);
+    border-radius: 8px;
+    font-family: variables.$font-family-primary;
+    font-size: 1rem;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$color-text;
+    cursor: pointer;
+    transition: all variables.$transition-base;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    &:hover:not(:disabled) {
+      border-color: variables.$color-primary;
+      color: variables.$color-primary;
+      background: rgba(variables.$color-primary, 0.05);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  &__submit {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: variables.$color-primary;
+    border: none;
+    border-radius: 8px;
+    font-family: variables.$font-family-primary;
+    font-size: 1rem;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$color-white;
+    cursor: pointer;
+    transition: all variables.$transition-base;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    &:hover:not(:disabled) {
+      background: variables.$color-primary-hover;
+      transform: translateY(-2px);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+      &__feedback {
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 0.3s ease-out;
+        
+        &--loading {
+        background: rgba(variables.$color-primary, 0.05);
+        border: 2px solid rgba(variables.$color-primary, 0.1);
+        }
+        
+        &--success {
+        background: rgba(16, 185, 129, 0.05);
+        border: 2px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        &--error {
+        background: rgba(239, 68, 68, 0.05);
+        border: 2px solid rgba(239, 68, 68, 0.2);
+        }
+    }
+    
+    &__feedback-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        
+        .contact-modal__feedback--loading & {
+        background: rgba(variables.$color-primary, 0.1);
+        border: 3px solid rgba(variables.$color-primary, 0.2);
+        }
+        
+        .contact-modal__feedback--success & {
+        background: rgba(16, 185, 129, 0.1);
+        border: 3px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .contact-modal__feedback--error & {
+        background: rgba(239, 68, 68, 0.1);
+        border: 3px solid rgba(239, 68, 68, 0.3);
+        }
+    }
+    
+    &__spinner {
+        width: 30px;
+        height: 30px;
+        border: 3px solid rgba(variables.$color-primary, 0.3);
+        border-top: 3px solid variables.$color-primary;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    &__checkmark {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #10b981;
+        line-height: 1;
+    }
+    
+    &__error-mark {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ef4444;
+        line-height: 1;
+    }
+    
+    &__feedback-content {
+        max-width: 400px;
+    }
+    
+    &__feedback-title {
+        font-size: 1.5rem;
+        font-weight: variables.$font-weight-extrabold;
+        margin: 0 0 0.5rem 0;
+        
+        .contact-modal__feedback--success & {
+        color: #059669;
+        }
+        
+        .contact-modal__feedback--error & {
+        color: #dc2626;
+        }
+    }
+    
+    &__feedback-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0 0 0.5rem 0;
+        color: variables.$color-text;
+    }
+    
+    &__feedback-note {
+        font-size: 0.875rem;
+        color: rgba(variables.$color-text, 0.6);
+        margin: 0;
+        font-style: italic;
+    }
+    
+    &__retry {
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: variables.$color-primary;
+        border: none;
+        border-radius: 8px;
+        color: variables.$color-white;
+        font-family: variables.$font-family-primary;
+        font-weight: variables.$font-weight-bold;
+        cursor: pointer;
+        transition: all variables.$transition-base;
+        
+        &:hover {
+        background: variables.$color-primary-hover;
+        }
+    }
+    
+    // Animaciones
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeIn {
+        from {
+        opacity: 0;
+        transform: translateY(-10px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+  }
+}
+
+// Animación 
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

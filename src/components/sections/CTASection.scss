@@ -90,54 +90,6 @@
     z-index: 1;
   }
   
-  &__dot {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(variables.$color-primary, 0.1);
-    
-    &--1 {
-      width: 100px;
-      height: 100px;
-      top: 10%;
-      left: 5%;
-      
-      @media (min-width: variables.$breakpoint-tablet) {
-        width: 150px;
-        height: 150px;
-        top: 15%;
-        left: 10%;
-      }
-    }
-    
-    &--2 {
-      width: 60px;
-      height: 60px;
-      top: 60%;
-      right: 10%;
-      
-      @media (min-width: variables.$breakpoint-tablet) {
-        width: 100px;
-        height: 100px;
-        top: 50%;
-        right: 15%;
-      }
-    }
-    
-    &--3 {
-      width: 80px;
-      height: 80px;
-      bottom: 20%;
-      left: 15%;
-      
-      @media (min-width: variables.$breakpoint-tablet) {
-        width: 120px;
-        height: 120px;
-        bottom: 25%;
-        left: 20%;
-      }
-    }
-  }
-  
   // hover para el botón
   &__button {
     position: relative;

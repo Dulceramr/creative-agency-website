@@ -1,0 +1,57 @@
+@use '../../styles/variables';
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+  
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      gap: 1rem;
+    }
+  }
+  
+  &__button {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid rgba(variables.$color-text, 0.2);
+    border-radius: 50px;
+    font-family: variables.$font-family-primary;
+    font-size: 0.875rem;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$color-text;
+    cursor: pointer;
+    transition: all variables.$transition-base;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    &:hover {
+      border-color: variables.$color-primary;
+      color: variables.$color-primary;
+      transform: translateY(-2px);
+    }
+    
+    &--active {
+      background: variables.$color-primary;
+      border-color: variables.$color-primary;
+      color: variables.$color-text-light;
+      
+      &:hover {
+        background: variables.$color-primary-hover;
+        border-color: variables.$color-primary-hover;
+        color: variables.$color-text-light;
+        transform: translateY(-2px);
+      }
+    }
+    
+    &:focus {
+      outline: 2px solid variables.$color-primary;
+      outline-offset: 2px;
+    }
+  }
+}
