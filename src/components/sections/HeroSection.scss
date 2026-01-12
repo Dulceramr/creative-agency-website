@@ -5,11 +5,16 @@
   background-color: variables.$color-white;
   
   @media (min-width: variables.$breakpoint-tablet) {
-    padding: 8rem 0 8rem;
+    padding-block-start: 7rem;
+    padding-block-end: 0;
   }
   
   @media (min-width: variables.$breakpoint-desktop) {
-    padding: 8rem 0 10rem;
+    padding-block-start: 4rem;
+  }
+
+  @media (min-width: variables.$breakpoint-wide) {
+    padding-block-start: 11rem;
   }
   
   &__container {
@@ -29,16 +34,45 @@
     flex: 1;
     
     @media (min-width: variables.$breakpoint-tablet) {
-          position: relative;
-    max-width: 60vw;
-    z-index: 2;
-    background: linear-gradient(to right, 
-    #FFFFFF 0%,
-    rgba(255, 255, 255, 0.925) 70%,
-        rgba(255, 255, 255, 0.281) 90%,   
-    rgba(255, 255, 255, 0.027) 100% 
-  );
+      position: relative;
+      height: 60vh;
+      max-width: 60vw;
+      z-index: 2;
+      padding-block-start: 3rem;
+      padding-inline-start: 2rem;
+
+      background: linear-gradient(to right, 
+        #FFFFFF 0%,
+        rgba(255, 255, 255, 0.925) 70%,
+            rgba(255, 255, 255, 0.281) 90%,   
+        rgba(255, 255, 255, 0.027) 100% 
+      );
     }
+
+    @media (min-width: variables.$breakpoint-desktop) {
+      height: 50vh;
+    }
+
+    @media (min-width: variables.$breakpoint-desktop) {
+      padding-block-start: 6rem;
+      padding-inline-start: 4rem;
+      height: 75vh;
+    }
+
+    @media (min-width: variables.$breakpoint-wide) {
+      height: 95vh;
+      
+    }
+
+    @media (max-height: 800px) and (min-width: 1024px) {
+      min-height: 100vh; 
+    }
+
+    @media (max-height: 700px) and (min-width: variables.$breakpoint-tablet) {
+      min-height: 130vh;
+    }
+
+
   }
   
   &__title {
@@ -106,7 +140,7 @@
     @media (min-width: variables.$breakpoint-tablet) {
     right: 0;
     position: absolute;
-    width: 97vw;
+    width: 130vw;
     }
   }
   

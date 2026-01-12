@@ -78,7 +78,7 @@ a {
   transition: color variables.$transition-base;
   
   &:hover {
-    color: variables.$color-primary;
+    font-weight: variables.$font-weight-extrabold;
   }
 }
 

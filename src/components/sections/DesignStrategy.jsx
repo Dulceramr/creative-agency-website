@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../ui/Button';
 import './DesignStrategy.scss';
 
-const DesignStrategy = () => {
+const DesignStrategy = ({ onScheduleCall }) => {
   return (
     <section className="design-strategy" id="strategy">
       <div className="design-strategy__container">
@@ -35,7 +35,7 @@ const DesignStrategy = () => {
           </blockquote>
           
           <div className="design-strategy__cta">
-            <Button variant="underline">
+            <Button variant="underline" onClick={onScheduleCall}>
               Schedule a call
             </Button>
           </div>
