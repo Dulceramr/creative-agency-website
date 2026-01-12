@@ -11,7 +11,7 @@ const DesignStrategy = ({ onScheduleCall }) => {
         <div className="design-strategy__image-container">
           <div className="design-strategy__image-wrapper">
             <img 
-              src="/images/design-strategy/laptop-design.jpeg" 
+              src="./images/design-strategy/laptop-design.jpeg" 
               alt="Laptop showing design work and strategy"
               className="design-strategy__image"
               loading="lazy"
