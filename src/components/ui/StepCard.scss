@@ -1,0 +1,45 @@
+@use '../../styles/variables';
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  @media (min-width: variables.$breakpoint-tablet) {
+    gap: 2rem;
+  }
+  
+  &__number {
+    font-size: 5rem;
+    font-weight: variables.$font-weight-extrabold;
+    line-height: 1;
+    color: rgba(variables.$color-text-light, 0.15); 
+    position: relative;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      font-size: 6rem;
+    }
+    
+    @media (min-width: variables.$breakpoint-desktop) {
+      font-size: 7rem;
+    }
+  }
+  
+  &__content {
+    flex: 1;
+  }
+  
+  &__title {
+    font-size: 1.5rem;
+    font-weight: variables.$font-weight-bold;
+    line-height: 1.2;
+        margin: 2rem 0 0 0;
+    color: variables.$color-text-light;
+    position: absolute;
+    left: 3.5rem;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      font-size: 1.75rem;
+    }
+  }
+}

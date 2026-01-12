@@ -1,0 +1,167 @@
+@use '../../styles/variables';
+
+.btn {
+  // ===== ESTILOS BASE PARA TODOS LOS BOTONES =====
+  padding: 1rem 2rem;
+  border-radius: variables.$border-radius-none;
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-body;
+  font-weight: variables.$font-weight-bold;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all variables.$transition-base;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  
+  // Mobile first: botones a ancho completo
+  width: 100%;
+  
+  @media (min-width: variables.$breakpoint-tablet) {
+    width: auto;
+    min-width: 180px;
+  }
+  
+  // Efecto hover común para todos
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+  
+  // Efecto active común para todos
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  // Focus state para accesibilidad
+  &:focus {
+    outline: 2px solid variables.$color-primary;
+    outline-offset: 2px;
+  }
+  
+  // Disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  // ===== VARIANTES DE BOTÓN =====
+  
+  // BUTTON 1: PRIMARY - ROJO "APAGADO" (#f94f4f)
+  &--primary {
+    background-color: variables.$color-primary;
+    color: variables.$color-text-light;
+    box-shadow: variables.$shadow-sm;
+    
+    &:hover:not(:disabled) {
+      background-color: variables.$color-primary-hover;
+      box-shadow: variables.$shadow-md;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: variables.$color-primary-active;
+      box-shadow: variables.$shadow-sm;
+    }
+  }
+  
+  // BUTTON 2: SECONDARY - NEGRO "BASE" (#191921)
+  &--secondary {
+    background-color: variables.$color-secondary;
+    color: variables.$color-text-light;
+    box-shadow: variables.$shadow-sm;
+    
+    &:hover:not(:disabled) {
+      background-color: variables.$color-secondary-hover;
+      box-shadow: variables.$shadow-md;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: variables.$color-secondary-active;
+      box-shadow: variables.$shadow-sm;
+    }
+  }
+  
+  // BUTTON 3: UNDERLINE - TRANSPARENTE CON TEXTO ROJO Y SUBRAYADO
+  &--underline {
+    background: transparent;
+    color: variables.$color-primary;
+    padding: 0.75rem 0;
+    min-width: auto;
+    width: auto;
+    justify-content: flex-start;
+    
+    // Subrayado animado
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 2px;
+      background-color: variables.$color-primary;
+      transition: width variables.$transition-base;
+    }
+    
+    &:hover:not(:disabled) {
+      color: variables.$color-primary-hover;
+      
+      &::after {
+        width: 100%;
+        background-color: variables.$color-primary-hover;
+      }
+    }
+    
+    &:active:not(:disabled) {
+      color: variables.$color-primary-active;
+      
+      &::after {
+        background-color: variables.$color-primary-active;
+      }
+    }
+    
+    // Sin efectos de elevación para esta variante
+    &:hover:not(:disabled), &:active:not(:disabled) {
+      transform: none;
+    }
+  }
+  
+  // ===== TAMAÑOS ADICIONALES =====
+  
+  // Botón pequeño
+  &--sm {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    min-width: 140px;
+    
+    &.btn--underline {
+      padding: 0.5rem 0;
+    }
+  }
+  
+  // Botón grande
+  &--lg {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+    min-width: 220px;
+    
+    &.btn--underline {
+      padding: 1rem 0;
+    }
+  }
+  
+  // Botón full width (incluso en desktop)
+  &--full {
+    width: 100%;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      width: 100%;
+    }
+  }
+}
