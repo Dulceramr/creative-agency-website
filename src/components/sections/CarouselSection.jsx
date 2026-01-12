@@ -9,17 +9,17 @@ const CarouselSection = () => {
   const slides = [
     {
       id: 1,
-      image: '/images/carousel/brand-book.jpeg',
+      image: './images/carousel/brand-book.jpeg',
       title: 'Brand naming & guidelines',
     },
     {
       id: 2,
-      image: '/images/carousel/merchandise.jpeg',
+      image: './images/carousel/merchandise.jpeg',
       title: 'Brand identity & merchandise',
     },
     {
       id: 3,
-      image: '/images/carousel/web-design.jpeg', 
+      image: './images/carousel/web-design.jpeg', 
       title: 'Brand identity & web design',
     }
   ];

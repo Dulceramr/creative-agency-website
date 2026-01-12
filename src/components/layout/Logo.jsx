@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="logo__container">
         <div className="logo__image-container">
           <img 
-            src="/images/logo/logo.jpeg" 
+            src="./images/logo/logo.jpeg" 
             alt="Creative Agency Logo"
             className="logo__image"
             loading="eager" 

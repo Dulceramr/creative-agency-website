@@ -30,7 +30,7 @@ const HeroSection = () => {
         <div className="hero-section__image-container">
           <div className="hero-section__image-wrapper">
                   <img 
-                    src="/images/hero/team-working.jpeg" 
+                    src="./images/hero/team-working.jpeg" 
                     alt="Two professionals working together on a computer"
                     className="hero-section__image"
                     loading="lazy" 
