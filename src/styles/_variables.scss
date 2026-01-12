@@ -3,7 +3,7 @@ $color-primary: #f94f4f;
 $color-secondary: #191921;
 $color-text: #000000;
 $color-white: #FFFFFF;
-$color-black: #000000;
+$color-black: #191921;
 $color-background: #FFFFFF;
 $color-text-light: $color-white;
 
@@ -11,7 +11,7 @@ $color-text-light: $color-white;
 $color-text-light: $color-white;
 
 // ===== VARIACIONES PARA HOVER/ACTIVE =====
-$color-primary-hover: hsl(0, 85%, 70%);
+$color-primary-hover: hsl(0, 33%, 17%);
 $color-primary-active: hsl(0, 80%, 55%);
 $color-secondary-hover: hsl(240, 14%, 20%);
 $color-secondary-active: hsl(240, 14%, 15%);
@@ -21,7 +21,7 @@ $font-family-primary: 'Commissioner', -apple-system, sans-serif;
 
 // Tamaños
 $font-size-h1: 5rem;
-$font-size-h2: 3.5rem;
+$font-size-h2: 3rem;
 $font-size-h3: 1.25rem;
 $font-size-body: 1.125rem;
 

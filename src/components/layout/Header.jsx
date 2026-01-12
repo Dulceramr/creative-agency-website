@@ -11,7 +11,7 @@ const Header = ({ onScheduleCall }) => {
   return (
     <>
       <header className="header">
-        <div className="header__container container">
+        <div className="header__container">
           <div className="header__logo">
             <Logo />
           </div>
@@ -24,7 +24,7 @@ const Header = ({ onScheduleCall }) => {
               <li><Link to="/projects" className="header__nav-link">Projects</Link></li>
             </ul>
             <Button 
-              variant="primary" 
+              variant="secondary" 
               className="header__cta"
               onClick={onScheduleCall}
             >

@@ -1,10 +1,8 @@
 @use '../../styles/variables';
 
 .carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+    padding-inline-start: 2rem;
+    margin-block-end: 4rem;
   
   &__counter {
     display: flex;
@@ -52,7 +50,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid variables.$color-secondary;
+    border: 2px solid variables.$color-primary;
     background: transparent;
     display: flex;
     align-items: center;
@@ -81,7 +79,7 @@
   &__arrow {
     font-size: 1.5rem;
     font-weight: variables.$font-weight-bold;
-    color: variables.$color-secondary;
+    color: variables.$color-primary;
     transition: color variables.$transition-base;
     line-height: 1;
   }

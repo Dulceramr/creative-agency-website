@@ -5,7 +5,7 @@ import './DesignStrategy.scss';
 const DesignStrategy = () => {
   return (
     <section className="design-strategy" id="strategy">
-      <div className="design-strategy__container container">
+      <div className="design-strategy__container">
         
         {/* Imagen de laptop (55% width en desktop) */}
         <div className="design-strategy__image-container">
@@ -22,7 +22,8 @@ const DesignStrategy = () => {
         {/* Contenido de texto (45% width en desktop) */}
         <div className="design-strategy__content">
           <h2 className="design-strategy__title">
-            Design is <span className="design-strategy__title-accent">strategic.</span>
+            <span className="design-strategy__title-accent">Design </span>
+            is strategic.
           </h2>
           
           <blockquote className="design-strategy__quote">

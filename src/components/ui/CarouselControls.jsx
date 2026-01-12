@@ -1,17 +1,9 @@
 import React from 'react';
 import './CarouselControls.scss';
 
-const CarouselControls = ({ currentSlide, totalSlides, onPrev, onNext }) => {
+const CarouselControls = ({ onPrev, onNext }) => {
   return (
     <div className="carousel-controls">
-      
-      {/* Indicador de slide */}
-      <div className="carousel-controls__counter">
-        <span className="carousel-controls__current">{String(currentSlide).padStart(2, '0')}</span>
-        <span className="carousel-controls__separator">/</span>
-        <span className="carousel-controls__total">{String(totalSlides).padStart(2, '0')}</span>
-      </div>
-      
       {/* Botones de navegación */}
       <div className="carousel-controls__buttons">
         <button

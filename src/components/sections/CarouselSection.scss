@@ -1,75 +1,71 @@
 @use '../../styles/variables';
 
 .carousel-section {
-  background: linear-gradient(
-    180deg,
-    variables.$color-background 0%,
-    rgba(variables.$color-secondary, 0.1) 100%
-  );
-  padding: 4rem 0;
-  
-  @media (min-width: variables.$breakpoint-tablet) {
-    padding: 6rem 0;
-  }
-  
-  @media (min-width: variables.$breakpoint-desktop) {
-    padding: 8rem 0;
-  }
+  background-color: white;
   
   &__container {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    flex-direction: column-reverse;
+    gap: 0;
+    background-color: white;
     
-    @media (min-width: variables.$breakpoint-desktop) {
+    @media (min-width: variables.$breakpoint-tablet) {
       flex-direction: row;
-      align-items: center;
-      gap: 4rem;
+      align-items: flex-start;
+      gap: 0;
+      min-height: 500px;
+      position: relative;
+              overflow: hidden;
     }
   }
   
-  // Contenedor de imagen
   &__image-container {
-    @media (min-width: variables.$breakpoint-desktop) {
-      flex: 0 0 50%;
-      max-width: 50%;
+    width: 100%;
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      flex: 0 0 55%;
+      max-width: 55%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
     }
   }
   
   &__image-wrapper {
     position: relative;
     width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 75%;
-    }
   }
   
   &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center;
-    transition: transform 0.3s ease;
+    height: 300px; // Altura fija en móvil
+    object-fit: cover;
+    display: block; // ← Elimina espacio inferior
     
-    &:hover {
-      transform: scale(1.03);
-    }
-  
-  // Contenido del carrusel
-  &__content {
-    @media (min-width: variables.$breakpoint-desktop) {
-      flex: 0 0 50%;
-      max-width: 50%;
+    @media (min-width: variables.$breakpoint-tablet) {
+      height: 100%;
+      object-position: top;
     }
   }
-}
+  
+  // CONTENIDO NEGRO (abajo en móvil)
+  &__content {
+    background-color: variables.$color-black;
+    color: white;
+    padding: 2rem;
+    margin-top: 0; 
+    
+    @media (min-width: variables.$breakpoint-tablet) {
+      flex: 0 0 45%;
+      max-width: 45%;
+      height: 70%;
+      padding: 3rem;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-right: -3.5rem;
+    }
+  }
 }

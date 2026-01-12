@@ -5,7 +5,7 @@ import './HeroSection.scss';
 const HeroSection = () => {
   return (
     <section className="hero-section" id="home">
-      <div className="hero-section__container container">
+      <div className="hero-section__container">
         
         {/* Contenido izquierdo - Texto */}
         <div className="hero-section__content">
@@ -29,16 +29,12 @@ const HeroSection = () => {
         {/* Contenido derecho - Imagen */}
         <div className="hero-section__image-container">
           <div className="hero-section__image-wrapper">
-            <div className="hero-section__image-container">
-              <div className="hero-section__image-wrapper">
                   <img 
                     src="/images/hero/team-working.jpeg" 
                     alt="Two professionals working together on a computer"
                     className="hero-section__image"
                     loading="lazy" 
                   />
-              </div>
-            </div>
           </div>
         </div>
         

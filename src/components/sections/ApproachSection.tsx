@@ -17,13 +17,13 @@ const ApproachSection = () => {
     {
       number: '03',
       title: 'Web Design',
-      description: 'A beautifully crafted website is the best tool for brand awareness, and our results-driven approach focuses on the bigger picture.'
+      description: 'A beautifully crafted website is the best tool for brand awareness, and ultimately results in increased revenues.'
     }
   ];
 
   return (
     <section className="approach-section" id="approach">
-      <div className="approach-section__container container">
+      <div className="approach-section__container">
         
         {/* Header de la sección */}
         <div className="approach-section__header">
