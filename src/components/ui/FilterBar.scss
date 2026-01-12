@@ -27,7 +27,6 @@
     color: variables.$color-text;
     cursor: pointer;
     transition: all variables.$transition-base;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     
     &:hover {

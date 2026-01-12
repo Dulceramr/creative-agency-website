@@ -2,40 +2,28 @@ import React from 'react';
 import Button from '../ui/Button';
 import './DesignStrategy.scss';
 
-const DesignStrategy = () => {
+const DesignStrategy = ({ onScheduleCall }) => {
   return (
     <section className="design-strategy" id="strategy">
-      <div className="design-strategy__container container">
+      <div className="design-strategy__container">
         
         {/* Imagen de laptop (55% width en desktop) */}
         <div className="design-strategy__image-container">
           <div className="design-strategy__image-wrapper">
-            {/* Placeholder de laptop */}
-            <div className="design-strategy__laptop">
-              <div className="design-strategy__laptop-screen">
-                <div className="design-strategy__screen-content">
-                  <div className="design-strategy__design-element design-strategy__design-element--1"></div>
-                  <div className="design-strategy__design-element design-strategy__design-element--2"></div>
-                  <div className="design-strategy__design-element design-strategy__design-element--3"></div>
-                </div>
-              </div>
-              <div className="design-strategy__laptop-base"></div>
-            </div>
-            
-            {/* Para imagen real:
             <img 
-              src="/images/laptop-design.jpg" 
+              src="/images/design-strategy/laptop-design.jpeg" 
               alt="Laptop showing design work and strategy"
               className="design-strategy__image"
+              loading="lazy"
             />
-            */}
           </div>
         </div>
         
         {/* Contenido de texto (45% width en desktop) */}
         <div className="design-strategy__content">
           <h2 className="design-strategy__title">
-            Design is <span className="design-strategy__title-accent">strategic.</span>
+            <span className="design-strategy__title-accent">Design </span>
+            is strategic.
           </h2>
           
           <blockquote className="design-strategy__quote">
@@ -47,7 +35,7 @@ const DesignStrategy = () => {
           </blockquote>
           
           <div className="design-strategy__cta">
-            <Button variant="underline">
+            <Button variant="underline" onClick={onScheduleCall}>
               Schedule a call
             </Button>
           </div>

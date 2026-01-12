@@ -120,7 +120,6 @@
     font-weight: variables.$font-weight-bold;
     color: variables.$color-text;
     margin-bottom: 0.5rem;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     
     &::after {
@@ -188,7 +187,6 @@
     color: variables.$color-text;
     cursor: pointer;
     transition: all variables.$transition-base;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     
     &:hover:not(:disabled) {
@@ -215,7 +213,6 @@
     color: variables.$color-white;
     cursor: pointer;
     transition: all variables.$transition-base;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     
     &:hover:not(:disabled) {

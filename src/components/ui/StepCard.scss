@@ -13,7 +13,7 @@
     font-size: 5rem;
     font-weight: variables.$font-weight-extrabold;
     line-height: 1;
-    color: rgba(variables.$color-text-light, 0.15); // Números grandes translúcidos
+    color: rgba(variables.$color-text-light, 0.15); 
     position: relative;
     
     @media (min-width: variables.$breakpoint-tablet) {
@@ -22,18 +22,6 @@
     
     @media (min-width: variables.$breakpoint-desktop) {
       font-size: 7rem;
-    }
-    
-    // Efecto "rosa" que mencionaste - podemos usar un tono más claro
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: variables.$color-text-light;
-      opacity: 0.3;
     }
   }
   
@@ -45,22 +33,13 @@
     font-size: 1.5rem;
     font-weight: variables.$font-weight-bold;
     line-height: 1.2;
-    margin: 0 0 1rem 0;
+        margin: 2rem 0 0 0;
     color: variables.$color-text-light;
+    position: absolute;
+    left: 3.5rem;
     
     @media (min-width: variables.$breakpoint-tablet) {
       font-size: 1.75rem;
-    }
-  }
-  
-  &__description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: rgba(variables.$color-text-light, 0.9);
-    margin: 0;
-    
-    @media (min-width: variables.$breakpoint-tablet) {
-      font-size: 1.125rem;
     }
   }
 }

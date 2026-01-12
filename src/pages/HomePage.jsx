@@ -21,7 +21,7 @@ const HomePage = () => {
       
       <main>
         <HeroSection onScheduleCall={handleScheduleCall} />
-        <DesignStrategy />
+        <DesignStrategy onScheduleCall={handleScheduleCall}/>
         <ApproachSection />
         <CarouselSection />
         <CTASection onScheduleCall={handleScheduleCall} />
